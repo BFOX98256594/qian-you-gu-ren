@@ -24,18 +24,28 @@
 
 dsh（DeepSeek Harness）的技能就是一个目录，放进任一扫描根即可：
 
-- 用户级：`~/.dsh/skills/` —— 对你所有项目可用
+- 用户级：`~/.dsh/skills/`（Windows 是 `%USERPROFILE%\.dsh\skills\`）—— 对你所有项目可用
 - 项目级：`.dsh/skills/` —— 随仓库提交，全队共用
+
+技能本体只有 markdown，**Linux / macOS / Windows 通用**，没有平台相关命令依赖。
+
+**Linux / macOS**
 
 ```bash
 git clone https://github.com/BFOX98256594/qian-you-gu-ren ~/.dsh/skills/qian-you-gu-ren
-```
-
-或者下载解压后手动拷贝，或在本目录跑：
-
-```bash
+# 或下载解压后在本目录跑：
 ./install.sh
 ```
+
+**Windows（PowerShell）**
+
+```powershell
+git clone https://github.com/BFOX98256594/qian-you-gu-ren "$env:USERPROFILE\.dsh\skills\qian-you-gu-ren"
+# 或下载解压后在本目录跑：
+.\install.ps1
+```
+
+也可以直接手动拷贝：把 `SKILL.md` 和 `references/` 放进 `<技能根>/qian-you-gu-ren/` 即可。
 
 新开一个会话，技能列表里出现 `qian-you-gu-ren` 就装好了。
 
